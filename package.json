@@ -2,10 +2,15 @@
   "name": "cypress-basic",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "npx http-server -p 5500 -s",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
   "repository": "https://imakerjun@github.com/imakerjun/cypress-basic.git",
   "author": "im1 <im1@woowahan.com>",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^14.3.3"
+    "cypress": "^15.13.1"
   }
 }
