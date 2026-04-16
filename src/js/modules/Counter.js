@@ -18,9 +18,9 @@ export default function Counter({ $app }) {
        <div class="container">
           <h1>ui counter</h1>
           <div class="counter">
-            <a href="#" class="btn-dec"><span>-</span></a>
-            <input name="count" type="text" class="count-display" value="10">
-            <a href="#" class="btn-inc"><span>+</span></a>
+            <a href="#" class="btn-dec" data-cy="decrease-button"><span>-</span></a>
+            <input name="count" type="text" class="count-display" data-cy="count-display" value="10">
+            <a href="#" class="btn-inc" data-cy="increase-button"><span>+</span></a>
           </div>
         </div>`;
   };
