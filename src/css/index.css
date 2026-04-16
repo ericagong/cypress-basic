@@ -27,29 +27,33 @@ h4 {
   padding: 0;
 }
 
-.minus-button,
-.plus-button {
+.btn-dec,
+.btn-inc {
   display: block;
   width: 22px;
   height: 23px;
   margin: 0;
+  padding: 0;
   background: #dee0ee;
-  text-decoration: none;
   text-align: center;
   line-height: 23px;
+  color: #8184a1;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
 }
 
-.minus-button:hover,
-.plus-button:hover {
+.btn-dec:hover,
+.btn-inc:hover {
   background: #575b71;
   color: #fff;
 }
 
-.minus-button {
+.btn-dec {
   border-radius: 3px 0 0 3px;
 }
 
-.plus-button {
+.btn-inc {
   border-radius: 0 3px 3px 0;
 }
 
@@ -65,14 +69,4 @@ h4 {
   border-right: 2px solid #dee0ee;
   background: #fff;
   color: #8184a1;
-}
-
-.minus-button:link,
-.plus-button:link {
-  color: #8184a1;
-}
-
-.minus-button:visited,
-.plus-button:visited {
-  color: #fff;
 }

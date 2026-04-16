@@ -1,26 +1,16 @@
 export default function Counter({ $app }) {
-  const increase = () => {
-    const $countDisplay = document.querySelector('.count-display');
-    const currCount = Number($countDisplay.value);
-    if (currCount >= 12) return;
-    $countDisplay.value = currCount + 1;
-  };
-
-  const decrease = () => {
-    const $countDisplay = document.querySelector('.count-display');
-    const currCount = Number($countDisplay.value);
-    if (currCount <= 8) return;
-    $countDisplay.value = currCount - 1;
-  };
+  const MIN_COUNT = 8;
+  const MAX_COUNT = 12;
+  const INITIAL_COUNT = 10;
 
   const render = () => {
     $app.innerHTML = `
        <div class="container">
           <h1>ui counter</h1>
           <div class="counter">
-            <a href="#" class="btn-dec" data-cy="decrease-button"><span>-</span></a>
-            <input name="count" type="text" class="count-display" data-cy="count-display" value="10">
-            <a href="#" class="btn-inc" data-cy="increase-button"><span>+</span></a>
+            <button type="button" class="btn-dec" data-cy="decrease-button">-</button>
+            <input name="count" type="text" class="count-display" data-cy="count-display" value="${INITIAL_COUNT}">
+            <button type="button" class="btn-inc" data-cy="increase-button">+</button>
           </div>
         </div>`;
   };
@@ -28,11 +18,21 @@ export default function Counter({ $app }) {
   const init = () => {
     render();
 
+    const $countDisplay = document.querySelector('.count-display');
     const $decBtn = document.querySelector('.btn-dec');
-    $decBtn.addEventListener('click', decrease);
-
     const $incBtn = document.querySelector('.btn-inc');
-    $incBtn.addEventListener('click', increase);
+
+    $decBtn.addEventListener('click', () => {
+      const currCount = Number($countDisplay.value);
+      if (currCount <= MIN_COUNT) return;
+      $countDisplay.value = currCount - 1;
+    });
+
+    $incBtn.addEventListener('click', () => {
+      const currCount = Number($countDisplay.value);
+      if (currCount >= MAX_COUNT) return;
+      $countDisplay.value = currCount + 1;
+    });
   };
 
   init();
